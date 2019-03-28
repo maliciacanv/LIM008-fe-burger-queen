@@ -1,0 +1,34 @@
+{ 
+    "menus": {
+        "desayuno": {
+            "cafeamericano": 5,
+            "cafeconleche": 7,
+            "sandwichdejamonyqueso": 10,
+            "jugosdefrutasnatural": 10
+        },
+        "almuerzoycena": {
+            "hamburguesas": {
+            "hamburguesadepollosimple": 10,
+            "hamburguesaderessimple": 10,
+            "hamburguesadevgetarianosimple": 10,
+            "hamburguesadepollodoble": 10,
+            "hamburguesaderesdoble": 10,
+            "hamburguesadevegetarianodoble": 10
+            },
+            "adicional": {
+                "queso": 1,
+                "huevo": 1
+            },
+            "acompañamiento": {
+                "papasfritas": 5,
+                "arosdecebolla": 5
+            },
+            "bebidas":{
+                "agua500ml": 5,
+                "agua750ml": 7,
+                "bebidagaseosa500ml": 7,
+                "bebidagaseosa750ml": 10
+            }
+        }
+    }
+}
