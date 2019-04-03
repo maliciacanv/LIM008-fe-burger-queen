@@ -1,0 +1,30 @@
+.container-one{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+    font-size: 20px;
+    margin-top: 300px;
+}
+
+.input-one{
+    border: 1px solid white;
+    text-align: center;
+    background: white;
+    color: black;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 50px;
+    margin-bottom: 20px;
+}
+.btn-one{
+    display: block;
+    background: #FFF504;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 18px;
+    color: black;
+    margin: auto;
+    border: 1px solid #FFF504;
+}
