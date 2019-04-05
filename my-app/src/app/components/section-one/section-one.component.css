@@ -1,11 +1,12 @@
 .container-one{
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    width: 100%;
 }
 
 h1{
-    font-size: 20px;
-    margin-top: 300px;
+    font-size: 30px;
 }
 
 .input-one{
@@ -13,18 +14,27 @@ h1{
     text-align: center;
     background: white;
     color: black;
-    font-size: 16px;
+    font-size: 28px;
     padding: 10px;
     border-radius: 50px;
+    margin-top: 5px;
     margin-bottom: 20px;
+
 }
 .btn-one{
     display: block;
     background: #FFF504;
     border-radius: 10px;
     padding: 10px;
-    font-size: 18px;
+    font-size: 28px;
     color: black;
     margin: auto;
     border: 1px solid #FFF504;
+}
+.logo-one{
+    width: 25%;
+}
+
+.fa{
+    display: block;
 }

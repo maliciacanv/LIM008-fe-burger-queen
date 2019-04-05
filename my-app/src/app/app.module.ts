@@ -1,19 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+//rutas
+import { APP_ROUTING } from './app-routes';
+
+//componentes
 import { AppComponent } from './app.component';
-import { BodyComponent } from './components/body/body.component';
+import { SectionOneComponent } from './components/section-one/section-one.component';
+import { SectionTwoComponent } from './components/section-two/section-two.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BodyComponent
+    SectionOneComponent,
+    SectionTwoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    APP_ROUTING
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })
