@@ -1,0 +1,43 @@
+.container-ticket-food{
+    background: white;
+    width: 40%;
+    color: black;
+    margin-right: 17px;
+    float: right;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.customer-name{
+    font-size: 20px;
+
+}
+hr{
+    background: black;
+}
+.total{
+    color: red;
+}
+
+.total p{
+    margin-left: 150px;
+}
+.precio{
+    float: right;
+}
+.date{
+    font-size: 16px;
+
+}
+
+.btn-send{
+    display: block;
+    background: #FFF504;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 20px;
+    color: black;
+    margin: auto;
+    border: 1px solid #FFF504;
+}

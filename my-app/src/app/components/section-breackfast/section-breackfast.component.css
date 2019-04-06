@@ -1,0 +1,24 @@
+.container-list{
+    width: 50%;
+    background: black;
+    color: black;
+    padding: 2px 15px 2px 2px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+.container-list ul li{
+    list-style: none;
+    padding: 5px;
+    background: white;
+    border-radius: 10px;
+
+}
+.cantidad{
+    border: 2px solid black;
+    text-align: center;
+
+}
+.precio{
+    float: right;
+}
+

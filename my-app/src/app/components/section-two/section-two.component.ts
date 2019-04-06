@@ -8,7 +8,6 @@ import { Component } from '@angular/core';
 })
 export class SectionTwoComponent {
 
-  mostrar= true;
 
   constructor() { }
   

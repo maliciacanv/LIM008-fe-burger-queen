@@ -5,7 +5,9 @@ import { SectionTwoComponent } from './components/section-two/section-two.compon
 const APP_ROUTES: Routes = [
   { path: 'section-one', component: SectionOneComponent },
   { path: 'section-two', component: SectionTwoComponent },
-  { path: '**', pathMatch: 'full', redirectTo: 'section-one'}
+  { path: '', component: SectionOneComponent }
+
+  // { path: '**', pathMatch: 'full', redirectTo: 'section-one'}
 ];
 
-export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES, { useHash: true });
+export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES);

@@ -38,3 +38,7 @@ h1{
 .fa{
     display: block;
 }
+
+a{
+    text-decoration: none;
+}
