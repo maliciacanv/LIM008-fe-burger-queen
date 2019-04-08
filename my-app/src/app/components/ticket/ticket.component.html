@@ -1,16 +1,16 @@
 <div class="container-ticket-food">
   <div class="customer-name">
-    <p>Cliente: <span>Ana paula</span></p>
+    <p>Cliente: <span>{{ name }}</span></p>
     <hr>
   </div>
     <ul>
-      <li>2 cafe americano <span class="precio"> $10.00</span></li>
+      <li> <span class="precio"> </span></li>
     </ul> 
     <div class="total">
-      <p>Total: <span class="precio">$10.00</span></p> 
+      <p>Total: <span class="precio">  </span></p> 
     </div>
     <div class="date">
-      <p>Fecha: 13:08 4-04-19</p>
+      <p>Fecha: {{ today | date: 'short' }} </p>
     </div>
     <div class="btn-send-to-kitchen">
       <button class="btn-send" type="button">Enviar a cocina</button>

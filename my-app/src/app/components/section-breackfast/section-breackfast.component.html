@@ -1,6 +1,6 @@
-<div class="container-list">
+<div  class="container-list">
     <ul>
-      <li><input class="cantidad" type="number" name="quantity" min="0" max="10"> cafe americano <span class="precio"> $5.00</span></li>
+      <li *ngFor= "let desayuno of desayunos"><input class="cantidad" type="number" name="quantity" min="0" max="10"> {{ desayuno[0] }}<span class="precio"> {{ desayuno [1] }}</span></li>
     </ul>
 </div>
   <!-- <div class="container-list">

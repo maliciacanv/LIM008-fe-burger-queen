@@ -2,6 +2,6 @@
     <img src="../assets/imagens/logo.png" class="logo-one"/>
     <h1> {{ title }} </h1>
     <i class="fa fa-user"></i>
-    <input class="input-one" type="text" placeholder="ingresa nombre">
-    <a><button class="btn-one" type="button" [routerLink]="['section-two']">Empezar pedido</button></a>
+    <input class="input-one" type="text" placeholder="ingresa nombre" #ingresarTexto>
+    <a><button (click)="inputName(ingresarTexto.value)" class="btn-one" type="button" [routerLink]="['section-two']">Empezar pedido</button></a>
 </div>
