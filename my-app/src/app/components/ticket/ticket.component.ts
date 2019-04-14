@@ -31,8 +31,9 @@ export class TicketComponent implements OnInit {
   ngOnInit() {
 
     this.today = new Date();
-
   }
+  
+  
 
 
 }

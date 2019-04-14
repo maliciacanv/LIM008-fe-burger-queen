@@ -1,18 +1,43 @@
-<div class="container-ticket-food">
-  <div class="customer-name">
-    <p>Cliente: <span> {{ name }} </span></p>
+  <!-- <div class="customer-name">
     <hr>
   </div>
     <ul>
-      <li *ngFor="let pedido of pedidoBreakfast"><input class="cantidad" type="number" name="quantity" min="0" max="10">{{ pedido.nombre }} <span class="precio"> ${{ pedido.precio }} </span></li>
+      <li *ngFor="let pedido of pedidoBreakfast"> <span class="precio"> ${{ pedido.precio }} </span></li>
     </ul> 
-    <div class="total">
-      <p>Total: <span class="precio">  </span></p> 
-    </div>
-    <div class="date">
-      <p>Fecha: {{ today | date: 'short' }} </p>
-    </div>
     <div class="btn-send-to-kitchen">
       <button class="btn-send" type="button">Enviar a cocina</button>
     </div>
-</div>
+</div> -->
+    <table class="table table-dark table-responsive table-hover">
+    <thead>
+        <p>Cliente: <span> {{ name }} </span></p>
+        <hr>
+        <div class="date">
+            <p>Fecha: {{ today | date: 'short' }} </p>
+          </div>
+      <tr>
+        <th scope="col">cantidad</th>
+        <th scope="col">producto</th>
+        <th scope="col">precio</th>
+        <th scope="col">eliminar</th>
+        <th scope="col">editar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pedido of pedidoBreakfast">
+        <td><input  type="number" name="quantity" min="0" max="10"></td>
+        <td>{{ pedido.nombre }}</td>
+        <td>{{ pedido.precio }}</td>
+        <td><i class="fa fa-delete"></i></td>
+        <td><i class="fa fa-edit"></i></td>
+      </tr>
+  </tbody>
+  <div class="input-group">
+      <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+      <div class="input-group-append">
+        <span class="input-group-text">$</span>
+        <span class="input-group-text">0.00</span>
+      </div>
+  </div>
+    <button type="button" class="btn btn-warning btn-lg btn-block">Enviar a cocina</button>        
+  </table>

@@ -1,12 +1,7 @@
-.container-ticket-food{
-    background: white;
-    width: 40%;
-    color: black;
-    margin-right: 17px;
+.table{
+    width: 48%;
     float: right;
     padding: 5px;
-    border-radius: 10px;
-    border: 1px solid black;
     margin-bottom: 0;
 }
 
@@ -15,7 +10,7 @@
 
 }
 hr{
-    background: black;
+    background: white;
 }
 .total{
     color: red;
@@ -32,13 +27,9 @@ hr{
 
 }
 
-.btn-send{
-    display: block;
-    background: #FFF504;
-    border-radius: 10px;
-    padding: 10px;
+.btn{
+    padding: 5px;
     font-size: 20px;
     color: black;
-    margin: auto;
-    border: 1px solid #FFF504;
+    margin-top: 5px;
 }
