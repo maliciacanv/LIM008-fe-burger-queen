@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore} from '@angular/fire/firestore'
-import { Observable } from 'rxjs';
+import { Observable } from 'Rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,31 +9,22 @@ import { Observable } from 'rxjs';
 
 export class ServiceFirestoreService {
 
-  desayunosCollection: Observable<Menus>;
-  almuerzoYcena: Observable<Menus>;
-  adicional: Observable<Menus>;
-  acompañamiento: Observable<Menus>;
-  bebidas: Observable<Menus>;
-
-
-
+menusCollection: Observable<Menus[]>;
+  
   constructor( public dataMenus: AngularFirestore) {
-    this.desayunosCollection = this.dataMenus.collection('menús').doc('desayuno').valueChanges();
-    this.almuerzoYcena = this.dataMenus.collection('menús').doc('almuerzo y cena').valueChanges();
-    this.adicional = this.dataMenus.collection('menús').doc('adicional').valueChanges();
-    this.acompañamiento = this.dataMenus.collection('menús').doc('acompañamiento').valueChanges();
-    this.bebidas = this.dataMenus.collection('menús').doc('bebidas').valueChanges();
+    // this.menusCollection = this.dataMenus.collection('menús').valueChanges();
    }
    getMenus() {
-     return this.desayunosCollection;
+    //  return this.dataMenus.collection('menús').valueChanges();   
+    return this.menusCollection = this.dataMenus.collection('menús').valueChanges();
    }
-   getAlmuerzoYcena() {
-     return this.almuerzoYcena;
-   }
-  
 }
 
 
+
+
 export interface Menus{
-  menus?: string;
+  tipo?: string;
+  nombre?: string;
+  precio?: number;
 }

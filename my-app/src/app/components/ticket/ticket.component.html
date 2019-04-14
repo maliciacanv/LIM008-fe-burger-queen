@@ -1,10 +1,10 @@
 <div class="container-ticket-food">
   <div class="customer-name">
-    <p>Cliente: <span>{{ name }}</span></p>
+    <p>Cliente: <span> {{ name }} </span></p>
     <hr>
   </div>
     <ul>
-      <li> <span class="precio"> </span></li>
+      <li *ngFor="let pedido of pedidoBreakfast"><input class="cantidad" type="number" name="quantity" min="0" max="10">{{ pedido.nombre }} <span class="precio"> ${{ pedido.precio }} </span></li>
     </ul> 
     <div class="total">
       <p>Total: <span class="precio">  </span></p> 

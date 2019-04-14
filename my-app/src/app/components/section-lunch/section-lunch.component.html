@@ -1,5 +1,21 @@
+<div> 
   <div class="container-list">
     <ul>
-      <li *ngFor="let almuerzo of almuerzos"><input type="number" name="quantity" min="0" max="10"> {{ almuerzo[0] }} <span> {{ almuerzo[1] }}</span> <label>adicinal</label></li>
+      <li *ngFor="let almuerzo of almuerzos"><input type="number" class="cantidad" name="quantity" min="0" max="10"> {{ almuerzo.nombre }} <span class="precio"> ${{ almuerzo.precio }}</span></li>
+      <span class="adicional">ADICIONAL</span>
+      <li *ngFor="let adicional of adicionales"><input type="number" class="cantidad" name="quantity" min="0" max="10"> {{ adicional.nombre }} <span class="precio"> ${{ adicional.precio }}</span></li>
     </ul>
   </div>
+  <div class="acomp">
+    <ul>
+      <span>ACOMPAÑAMIENTO </span>
+      <li *ngFor="let acomp of acompts"><input type="number" class="cantidad" name="quantity" min="0" max="10"> {{ acomp.nombre }} <span class="precio"> ${{ acomp.precio }}</span></li>
+    </ul>
+  </div>
+  <div class="bebidas">
+      <ul>
+        <span>BEBIDAS</span>
+        <li *ngFor="let bebida of bebidas"><input type="number" class="cantidad" name="quantity" min="0" max="10"> {{  bebida.nombre }} <span class="precio"> ${{ bebida.precio }}</span></li>
+      </ul>
+    </div>  
+</div>

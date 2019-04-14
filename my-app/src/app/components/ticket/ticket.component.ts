@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+// import { ActivatedRoute } from '@angular/router';
+import { ServiceLocalService } from '../../services/service-local/service-local.service';
 
 @Component({
   selector: 'app-ticket',
@@ -11,12 +12,23 @@ export class TicketComponent implements OnInit {
   name: string;
   today: any;
 
-  constructor( private activatedRoute: ActivatedRoute ) { }
+  public pedidoBreakfast = {};
+
+  constructor( private serviceLocal: ServiceLocalService, 
+    ) {
+    this.serviceLocal.names.subscribe(nam => {
+      this.name = nam;
+    });
+
+    this.serviceLocal.desayunos.subscribe((breakfast: any) => {
+    
+      this.pedidoBreakfast = breakfast;
+      console.log(this.pedidoBreakfast)
+    })
+
+   }
 
   ngOnInit() {
-    this.activatedRoute.params.subscribe(params => {
-      this.name = params['name'];
-    })
 
     this.today = new Date();
 

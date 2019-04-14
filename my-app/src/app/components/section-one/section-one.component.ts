@@ -1,5 +1,6 @@
-import { Component } from '@angular/core'
-import { Router } from '@angular/router';
+import { Component, OnInit} from '@angular/core';
+import { ServiceLocalService } from '../../services/service-local/service-local.service'
+// import { Router } from '@angular/router';
 // import { SectionTwoComponent } from '../section-two/section-two.component';
 
 
@@ -9,26 +10,21 @@ import { Router } from '@angular/router';
     styleUrls: ['./section-one.component.css']
 })
 
-export class SectionOneComponent {
-
-    constructor( private router: Router) { }
+export class SectionOneComponent implements OnInit {
 
     title: string = 'Ingresa el nombre del cliente';
-    
-    
-    inputName(name: string){
-        console.log(name)
-        let nameArr= [];
-         nameArr.push(name);
+    name : string;
 
-        // name = name.toLowerCase();
-        // if(name.length > 1 ) {
-        //   nameArr.push(name);
-        // }
-        // return nameArr;
-        this.router.navigate( ['section-two',name])
-      }
-    
-    
-    
+    constructor( public serviceLocal: ServiceLocalService) {
+        this.serviceLocal.names.subscribe(names => {
+            this.name = names;
+        })
+     }
+
+    ngOnInit() {}
+
+    inputName(name:string){
+       const newName = name;
+       this.serviceLocal.getName(newName);
+    }
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-// import { ActivatedRoute } from '@angular/router';
+// import { ActivatedRoute, Routes} from '@angular/router';
 
 @Component({
   selector: 'app-section-two',
@@ -8,8 +8,9 @@ import { Component } from '@angular/core';
 })
 export class SectionTwoComponent {
 
+  constructor( ) { 
 
-  constructor() { }
-  
+   
+  }
 
 }
