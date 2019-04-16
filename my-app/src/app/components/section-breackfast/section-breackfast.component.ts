@@ -15,10 +15,8 @@ export class SectionBreackfastComponent implements OnInit {
   pedidosDesayuno = {}
 
   constructor( public menusService: ServiceFirestoreService,
-               public desayunosService: ServiceLocalService 
-              
-    ) {
-
+               public desayunosService: ServiceLocalService ) 
+  {
       this.menusService.getMenus().subscribe(menus => {
       this.desayunos = menus.filter((ele: any) => ele.tipo === 'desayuno')
       })
@@ -27,15 +25,19 @@ export class SectionBreackfastComponent implements OnInit {
         this.pedidosDesayuno = desayun;
       })
    }
-
+  
   ngOnInit() {}
 
-
-  clickPedidos(value: string){
-    const newPedidos = value;
-    this.desayunosService.getBreakfast(newPedidos);
+  clickPedidos(value: object){
+    console.log(value)
+    const newPedido = {
+      ...value,
+      cantidad: 1,
+      precioTotal: 0
+      };
+      console.log(newPedido)
+    this.desayunosService.getBreakfast(newPedido);
   }
-
 
 }
 

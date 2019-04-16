@@ -10,16 +10,22 @@ import { Observable } from 'Rxjs';
 export class ServiceFirestoreService {
 
 menusCollection: Observable<Menus[]>;
+
+public createPedido;
   
-  constructor( public dataMenus: AngularFirestore) {
-    // this.menusCollection = this.dataMenus.collection('menús').valueChanges();
-   }
+  constructor( public dataMenus: AngularFirestore,
+               public addData: AngularFirestore     
+    ) {}
+
    getMenus() {
-    //  return this.dataMenus.collection('menús').valueChanges();   
     return this.menusCollection = this.dataMenus.collection('menús').valueChanges();
    }
-}
+   
+   addPedido(createPedido){
+     return this.addData.collection('pedidos').add(createPedido)
+   }
 
+}
 
 
 
@@ -28,3 +34,4 @@ export interface Menus{
   nombre?: string;
   precio?: number;
 }
+

@@ -16,27 +16,26 @@
             <p>Fecha: {{ today | date: 'short' }} </p>
           </div>
       <tr>
-        <th scope="col">cantidad</th>
-        <th scope="col">producto</th>
-        <th scope="col">precio</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Producto</th>
+        <th scope="col">P.Uni</th>
+        <th scope="col">P.total</th>
         <th scope="col">eliminar</th>
-        <th scope="col">editar</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let pedido of pedidoBreakfast">
-        <td><input  type="number" name="quantity" min="0" max="10"></td>
+        <td><input  type="number" name="quantity" min="1" max="10" [ngModel]="pedido.cantidad" #cantidad (keyup)="onCantidad(pedido, cantidad.value)"></td>
         <td>{{ pedido.nombre }}</td>
-        <td>{{ pedido.precio }}</td>
-        <td><i class="fa fa-delete"></i></td>
-        <td><i class="fa fa-edit"></i></td>
+        <td>{{ pedido.precio | currency }}</td>
+        <td>{{ pedido.precioTotal | currency }} </td>
+        <td><i class="fa fa-trash"></i></td>
       </tr>
   </tbody>
   <div class="input-group">
       <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
       <div class="input-group-append">
-        <span class="input-group-text">$</span>
-        <span class="input-group-text">0.00</span>
+        <span class="input-group-text">{{ total | currency }}</span>
       </div>
   </div>
     <button type="button" class="btn btn-warning btn-lg btn-block">Enviar a cocina</button>        
