@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceFirestoreService } from '../../services/service-firestore/service-firestore.service';
+import { ServiceLocalService } from '../../services/service-local/service-local.service';
+
 
 @Component({
   selector: 'app-section-lunch',
@@ -10,18 +12,26 @@ export class SectionLunchComponent implements OnInit {
    
   almuerzos = [];
   adicionales = [];
-  acompts= [];
-  bebidas = [];
+  otros= [];
 
-  constructor( public almuerzoService: ServiceFirestoreService) {
+  constructor( public almuerzoService: ServiceFirestoreService,
+               public menuServiceLocal: ServiceLocalService) {
     
       this.almuerzoService.getMenus().subscribe(menus => {
       this.almuerzos = menus.filter((ele:any) => ele.tipo === 'almuerzo')
-      this.adicionales = menus.filter((ele:any) => ele.tipo === 'adicional')
-      this.acompts = menus.filter((ele:any) => ele.tipo ==='acompañamiento')
-      this.bebidas = menus.filter((ele:any) => ele.tipo === 'bebidas')
+      this.otros = menus.filter((ele:any) => ele.tipo ==='otros')
     })
 }
+
+clickPedidos(value: any){
+  const newPedido = {
+    ...value,
+    cantidad: 1,
+    precioTotal: value.precio
+    };
+  this.menuServiceLocal.getBreakfast(newPedido);
+}
+
 
 ngOnInit() {}
 

@@ -1,8 +1,8 @@
 <div class="container-list">
-  <button *ngFor= "let desayuno of desayunos" (click)="clickPedidos(desayuno)">
+  <button class="btn" *ngFor= "let desayuno of desayunos; let i = index" (click)="clickPedidos(desayuno, i)">
     {{ desayuno.nombre }}
     <span class="precio">
-    ${{ desayuno.precio | number }}
+    {{ desayuno.precio | currency }}
     </span>
   </button>
 </div>

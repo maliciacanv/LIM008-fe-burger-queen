@@ -10,6 +10,7 @@ export interface Order {
 }
 
 export interface Producto {
+  id?: number,
   nombre: string,
   cantidad: number,
   precio: number,
@@ -26,10 +27,13 @@ export class ServiceLocalService {
   public nameClient = new BehaviorSubject('');
   names = this.nameClient.asObservable();
 
-  public pedidosDesayunos= new BehaviorSubject([]);
-  desayunos = this.pedidosDesayunos.asObservable();
+  public pedidosMenus= new BehaviorSubject([]);
+  menus = this.pedidosMenus.asObservable();
 
-  public arrayBreakfast: Producto[] = [];
+  public montoTotalPedido = new BehaviorSubject(0);
+  montoTotal = this.montoTotalPedido.asObservable();
+
+  public arrayPedidos: Producto[] = [];
 
   public order: Order = {
     nombreDcliente: '',    
@@ -49,35 +53,50 @@ export class ServiceLocalService {
   }
 
   getBreakfast(obj){
-    this.arrayBreakfast.push(obj)
-     this.pedidosDesayunos.next(this.arrayBreakfast)
+    this.arrayPedidos.push(obj)
+     this.pedidosMenus.next(this.arrayPedidos);
+     this.changeMontoTotal();
   }
 
   changeCantidad(obj, cantidadNueva){  
-    const filterProducto = this.arrayBreakfast.filter(ele => ele.nombre!==obj.nombre)
-    this.arrayBreakfast = [
-      ...filterProducto, 
-      {
-        ...obj,
-        cantidad: parseInt(cantidadNueva),
-        precioTotal: obj.precio*parseInt(cantidadNueva)
+    this.arrayPedidos = this.arrayPedidos.map(ele => { 
+      if(ele.nombre === obj.nombre){
+       const objModif = {
+          ...obj,
+          cantidad: parseInt(cantidadNueva),
+          precioTotal: obj.precio*parseInt(cantidadNueva)
+        }
+        return objModif;
       }
-    ]
-    this.pedidosDesayunos.next(this.arrayBreakfast)
+      return ele;
+     });  
+    this.pedidosMenus.next(this.arrayPedidos);
+    this.changeMontoTotal();
   }
+
+
+  changeMontoTotal(){
+  const total = this.arrayPedidos.reduce((acumulador, objeto) => { 
+     return  acumulador + objeto.precioTotal },0)
+  this.montoTotalPedido.next(total);
+  }
+
+
+  updateProduct(nombre: any){
+  this.arrayPedidos = this.arrayPedidos.filter(ele => { 
+    return (ele.nombre !== nombre)
+  })
+  this.pedidosMenus.next(this.arrayPedidos)
+  }
+
+
+
+
+
+
+
+
+
 
 }
 
-// export interface Names{
-//   names?: string ;
-// }
-
-
-  // getName(name){
-  //   let nameArr = '';
-  //   console.log(nameArr)
-  //   if(name.length > 1 ) {
-  //     nameArr = name;
-  //   }
-  //   return nameArr;
-  // }

@@ -5,20 +5,20 @@
     padding: 2px 15px 2px 2px;
     font-size: 20px;
     border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+
 }
-.container-list ul li{
-    list-style: none;
+
+.precio{
+    float: right;
+}
+.btn {
+    width: 70%;
     padding: 5px;
     background: white;
     border-radius: 10px;
     margin: 5px;
-
-}
-.cantidad{
-    border: 2px solid black;
-    text-align: center;
-
-}
-.precio{
-    float: right;
+    text-align: left;
+    margin-left: 15%;
 }

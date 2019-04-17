@@ -13,11 +13,14 @@ hr{
     background: white;
 }
 .total{
-    color: red;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
 }
-
-.total p{
-    margin-left: 150px;
+.monto-total{
+    background: rgb(255, 0, 0,1);
+    border-radius: 5px;
+    height: 40px;
 }
 .precio{
     float: right;

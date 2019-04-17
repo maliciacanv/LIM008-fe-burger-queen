@@ -9,12 +9,12 @@
     </div>
 </div> -->
     <table class="table table-dark table-responsive table-hover">
+      <p>Cliente: <span> {{ name }} </span></p>
+      <hr>
+      <div class="date">
+        <p>Fecha: {{ today | date: 'short' }} </p>
+      </div>
     <thead>
-        <p>Cliente: <span> {{ name }} </span></p>
-        <hr>
-        <div class="date">
-            <p>Fecha: {{ today | date: 'short' }} </p>
-          </div>
       <tr>
         <th scope="col">Cantidad</th>
         <th scope="col">Producto</th>
@@ -24,19 +24,16 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let pedido of pedidoBreakfast">
-        <td><input  type="number" name="quantity" min="1" max="10" [ngModel]="pedido.cantidad" #cantidad (keyup)="onCantidad(pedido, cantidad.value)"></td>
+      <tr *ngFor="let pedido of pedidoMenus">
+        <td><input  type="number" min="1" max="10" [ngModel]="pedido.cantidad" #cantidad (change)="onCantidad(pedido, cantidad.value)"></td>
         <td>{{ pedido.nombre }}</td>
         <td>{{ pedido.precio | currency }}</td>
         <td>{{ pedido.precioTotal | currency }} </td>
-        <td><i class="fa fa-trash"></i></td>
+        <td><button type="button" (click)="eliminar(pedido.nombre)" ><i class="fa fa-trash"></i></button></td>
       </tr>
   </tbody>
-  <div class="input-group">
-      <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
-      <div class="input-group-append">
-        <span class="input-group-text">{{ total | currency }}</span>
-      </div>
-  </div>
+    <div class="monto-total">
+      <span class="total">Total: {{ montoTot | currency }}</span>
+    </div>
     <button type="button" class="btn btn-warning btn-lg btn-block">Enviar a cocina</button>        
   </table>

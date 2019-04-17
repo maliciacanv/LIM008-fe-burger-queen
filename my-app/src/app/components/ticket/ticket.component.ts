@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceLocalService } from '../../services/service-local/service-local.service';
+import { createTokenForExternalReference } from '@angular/compiler/src/identifiers';
 
 @Component({
   selector: 'app-ticket',
@@ -10,40 +11,38 @@ export class TicketComponent implements OnInit {
 
   name: string;
   today: any;
-
-  public pedidoBreakfast: any[]= [];
-
-  public total?: number;
+  pedidoMenus: any[]= [];
+  montoTot: number;
 
   constructor( private serviceLocal: ServiceLocalService, 
     ) {
     this.serviceLocal.names.subscribe(nam => {
       return this.name = nam;
     });
-    this.serviceLocal.desayunos.subscribe((breakfast: any) => {
+    this.serviceLocal.menus.subscribe((breakfast: any) => {
       console.log(breakfast)
-      return this.pedidoBreakfast = breakfast;
+      return this.pedidoMenus = breakfast;
+    });
+    this.serviceLocal.montoTotal.subscribe((total: number) => {
+      return this.montoTot = total;
     })
    }
    
-  public precioTotal: number;
 
   onCantidad(event,cantidadNueva:number){
-    //  const hola = this.pedidoBreakfast.map(ele => 
-    //   console.log(ele))
-    //  this.precioTotal = cantidadNueva
      this.serviceLocal.changeCantidad(event,cantidadNueva)
-   }
-   
+  }
+
+eliminar(nombre: string){
+  this.serviceLocal.updateProduct(nombre)
+}
+
+ 
+
   ngOnInit() {
 
     this.today = new Date();
-
-    this.total = this.pedidoBreakfast.reduce((antes,obj,) => 
-     antes + (obj.cantidad*obj.precio),0);
     
-      console.log("soy yo Total: ", this.total) 
-  
   }
 }
 

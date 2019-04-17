@@ -15,28 +15,27 @@ export class SectionBreackfastComponent implements OnInit {
   pedidosDesayuno = {}
 
   constructor( public menusService: ServiceFirestoreService,
-               public desayunosService: ServiceLocalService ) 
+               public menuServiceLocal: ServiceLocalService ) 
   {
       this.menusService.getMenus().subscribe(menus => {
+
       this.desayunos = menus.filter((ele: any) => ele.tipo === 'desayuno')
       })
-
-      this.desayunosService.desayunos.subscribe(desayun => {
-        this.pedidosDesayuno = desayun;
+      this.menuServiceLocal.menus.subscribe(desayuno => {
+      this.pedidosDesayuno = desayuno;
       })
    }
   
   ngOnInit() {}
 
-  clickPedidos(value: object){
-    console.log(value)
+  clickPedidos(value: any, i){
     const newPedido = {
       ...value,
+      id: i,
       cantidad: 1,
-      precioTotal: 0
+      precioTotal: value.precio
       };
-      console.log(newPedido)
-    this.desayunosService.getBreakfast(newPedido);
+    this.menuServiceLocal.getBreakfast(newPedido);
   }
 
 }
