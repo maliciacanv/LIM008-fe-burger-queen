@@ -9,14 +9,14 @@
     </div>
 </div> -->
     <table class="table table-dark table-responsive table-hover">
-      <p>Cliente: <span> {{ name }} </span></p>
+      <p class="cliente">Cliente: <span> {{ name }} </span></p>
       <hr>
       <div class="date">
-        <p>Fecha: {{ today | date: 'short' }} </p>
+        <p class="fecha">Fecha: {{ today | date: 'short' }}</p>
       </div>
     <thead>
       <tr>
-        <th scope="col">Cantidad</th>
+        <th scope="col">Cantidad</th>   
         <th scope="col">Producto</th>
         <th scope="col">P.Uni</th>
         <th scope="col">P.total</th>
@@ -35,5 +35,5 @@
     <div class="monto-total">
       <span class="total">Total: {{ montoTot | currency }}</span>
     </div>
-    <button type="button" class="btn btn-warning btn-lg btn-block">Enviar a cocina</button>        
+    <button type="button" class="btn btn-warning btn-lg btn-block" (click)="enviarPedido(today, montoTot)">Enviar a cocina</button>        
   </table>

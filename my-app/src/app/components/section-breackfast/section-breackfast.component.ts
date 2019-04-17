@@ -17,14 +17,13 @@ export class SectionBreackfastComponent implements OnInit {
   constructor( public menusService: ServiceFirestoreService,
                public menuServiceLocal: ServiceLocalService ) 
   {
-      this.menusService.getMenus().subscribe(menus => {
-
-      this.desayunos = menus.filter((ele: any) => ele.tipo === 'desayuno')
-      })
-      this.menuServiceLocal.menus.subscribe(desayuno => {
-      this.pedidosDesayuno = desayuno;
-      })
-   }
+    this.menusService.getMenus().subscribe(menus => {
+    this.desayunos = menus.filter((ele: any) => ele.tipo === 'desayuno')
+    })
+    this.menuServiceLocal.menus.subscribe(desayuno => {
+    this.pedidosDesayuno = desayuno;
+    })
+  }
   
   ngOnInit() {}
 

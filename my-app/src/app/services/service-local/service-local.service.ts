@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { ServiceFirestoreService } from '../service-firestore/service-firestore.service';
 
 
 export interface Order {
@@ -41,8 +42,7 @@ export class ServiceLocalService {
     productos: [],
     montoTotalDelOrden: 0
   }
-
-  constructor( ) {}
+  constructor( public serviceFirestore: ServiceFirestoreService) {}
 
   getName(value: string){
     this.order = {
@@ -87,10 +87,19 @@ export class ServiceLocalService {
     return (ele.nombre !== nombre)
   })
   this.pedidosMenus.next(this.arrayPedidos)
+  this.changeMontoTotal()
   }
 
-
-
+  ordenesListo(date: any, montoTot: number){
+    const orden = {
+      ...this.order,
+      fecha: date,
+      productos: this.arrayPedidos,
+      montoTotalDelOrden: montoTot
+    }
+    this.serviceFirestore.addPedido(orden)
+  }
+  
 
 
 

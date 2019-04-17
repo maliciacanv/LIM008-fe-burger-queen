@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceLocalService } from '../../services/service-local/service-local.service';
-import { createTokenForExternalReference } from '@angular/compiler/src/identifiers';
+import { ServiceFirestoreService } from 'src/app/services/service-firestore/service-firestore.service';
 
 @Component({
   selector: 'app-ticket',
@@ -14,8 +14,8 @@ export class TicketComponent implements OnInit {
   pedidoMenus: any[]= [];
   montoTot: number;
 
-  constructor( private serviceLocal: ServiceLocalService, 
-    ) {
+  constructor( private serviceLocal: ServiceLocalService,)
+  {
     this.serviceLocal.names.subscribe(nam => {
       return this.name = nam;
     });
@@ -26,23 +26,29 @@ export class TicketComponent implements OnInit {
     this.serviceLocal.montoTotal.subscribe((total: number) => {
       return this.montoTot = total;
     })
-   }
+  }
    
-
   onCantidad(event,cantidadNueva:number){
      this.serviceLocal.changeCantidad(event,cantidadNueva)
   }
 
-eliminar(nombre: string){
+  eliminar(nombre: string){
   this.serviceLocal.updateProduct(nombre)
-}
+  }
 
- 
+  enviarPedido(date: any, montoTot: number){
+    if(confirm('¿Haz verificado la orden del cliente?') === true ){
+      this.serviceLocal.ordenesListo(date, montoTot)
+    }else{
+      alert('Tu pedido no se ha enviado a cocina')
+    }
+  
+  }
+
+  
 
   ngOnInit() {
-
     this.today = new Date();
-    
   }
 }
 

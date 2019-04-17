@@ -20,11 +20,11 @@ public createPedido;
    getMenus() {
     return this.menusCollection = this.dataMenus.collection('menús').valueChanges();
    }
-   
-   addPedido(createPedido){
-     return this.addData.collection('pedidos').add(createPedido)
-   }
 
+   addPedido(createPedido){
+     console.log(createPedido)
+     return this.addData.collection('ordenes').add(createPedido)
+   }
  
 }
 

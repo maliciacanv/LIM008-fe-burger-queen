@@ -40,3 +40,7 @@ hr{
 table{
     text-align: center;
 }
+
+.cliente, .fecha{
+    font-size: 20px;
+}
