@@ -21,6 +21,7 @@ import { SectionTwoComponent } from './components/section-two/section-two.compon
 import { SectionBreackfastComponent } from './components/section-breackfast/section-breackfast.component';
 import { SectionLunchComponent } from './components/section-lunch/section-lunch.component';
 import { TicketComponent } from './components/ticket/ticket.component';
+import { SectionDinnerComponent } from './components/section-dinner/section-dinner.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { TicketComponent } from './components/ticket/ticket.component';
     SectionTwoComponent,
     SectionBreackfastComponent,
     SectionLunchComponent,
-    TicketComponent
+    TicketComponent,
+    SectionDinnerComponent
   ],
   imports: [
     BrowserModule,
