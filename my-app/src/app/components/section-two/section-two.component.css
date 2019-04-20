@@ -9,24 +9,20 @@
     text-align: center;
 }
 
-.btn-two{
-    background: #FFF504;
-    border-radius: 10px;
+.btn{
     padding: 10px;
     font-size: 20px;
-    color: black;
-    border: 1px solid #FFF504;
     margin: 25px;
     cursor: pointer;
 }
 
-.btn-two:focus{
-    background: black;
-    color: white;
+.btn:focus{
+    background: rgb(250, 248, 248);
+    color: rgb(8, 8, 8);
     border: 1px solid black;
-
 }
+
 .btns-two{
-    background: white;
+    background: rgb(2, 2, 2);
     width: 100%;
 }

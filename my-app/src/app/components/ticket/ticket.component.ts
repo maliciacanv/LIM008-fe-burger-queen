@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceLocalService } from '../../services/service-local/service-local.service';
-import { ServiceFirestoreService } from 'src/app/services/service-firestore/service-firestore.service';
 
 @Component({
   selector: 'app-ticket',

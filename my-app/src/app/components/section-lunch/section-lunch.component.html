@@ -8,7 +8,7 @@
     </button>
   </div>
   <div class="acomp">
-    <button class="btn" *ngFor= "let otro of otros" (click)="clickPedidos(otro)">
+    <button class="btn-acom" *ngFor= "let otro of otros" (click)="clickPedidos(otro)">
       {{ otro.nombre }}
       <span class="precio">
       {{ otro.precio | currency }}

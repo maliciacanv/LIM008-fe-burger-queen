@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceFirestoreService } from '../../services/service-firestore/service-firestore.service';
 import { ServiceLocalService } from '../../services/service-local/service-local.service';
-// import { filter } from 'rxjs/operators';
-// import { ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-section-breackfast',
@@ -23,7 +21,7 @@ export class SectionBreackfastComponent implements OnInit {
     this.menuServiceLocal.menus.subscribe(desayuno => {
     this.pedidosDesayuno = desayuno;
     })
-  }
+  }  
   
   ngOnInit() {}
 

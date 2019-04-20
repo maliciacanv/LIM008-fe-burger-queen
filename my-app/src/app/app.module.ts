@@ -13,7 +13,6 @@ import { APP_ROUTING } from './app-routes';
 import { ServiceFirestoreService } from './services/service-firestore/service-firestore.service';
 import { ServiceLocalService} from './services/service-local/service-local.service';
 
-
 //componentes
 import { AppComponent } from './app.component';
 import { SectionOneComponent } from './components/section-one/section-one.component';
@@ -21,7 +20,10 @@ import { SectionTwoComponent } from './components/section-two/section-two.compon
 import { SectionBreackfastComponent } from './components/section-breackfast/section-breackfast.component';
 import { SectionLunchComponent } from './components/section-lunch/section-lunch.component';
 import { TicketComponent } from './components/ticket/ticket.component';
-import { SectionDinnerComponent } from './components/section-dinner/section-dinner.component';
+
+//module 
+import { SectionTwoModule } from './components/section-two/section-two.module';
+import { TicketModule } from './components/ticket/ticket.module';
 
 @NgModule({
   declarations: [
@@ -31,9 +33,10 @@ import { SectionDinnerComponent } from './components/section-dinner/section-dinn
     SectionBreackfastComponent,
     SectionLunchComponent,
     TicketComponent,
-    SectionDinnerComponent
   ],
   imports: [
+    SectionTwoModule,
+    TicketModule,
     BrowserModule,
     APP_ROUTING,
     AngularFireModule.initializeApp(environment.firebase),

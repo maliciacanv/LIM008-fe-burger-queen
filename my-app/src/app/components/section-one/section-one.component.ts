@@ -1,7 +1,5 @@
 import { Component, OnInit} from '@angular/core';
 import { ServiceLocalService } from '../../services/service-local/service-local.service'
-// import { Router } from '@angular/router';
-// import { SectionTwoComponent } from '../section-two/section-two.component';
 
 
 @Component({

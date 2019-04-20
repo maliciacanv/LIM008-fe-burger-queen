@@ -1,13 +1,3 @@
-  <!-- <div class="customer-name">
-    <hr>
-  </div>
-    <ul>
-      <li *ngFor="let pedido of pedidoBreakfast"> <span class="precio"> ${{ pedido.precio }} </span></li>
-    </ul> 
-    <div class="btn-send-to-kitchen">
-      <button class="btn-send" type="button">Enviar a cocina</button>
-    </div>
-</div> -->
     <table class="table table-dark table-responsive table-hover">
       <p class="cliente">Cliente: <span> {{ name }} </span></p>
       <hr>
@@ -33,7 +23,7 @@
       </tr>
   </tbody>
     <div class="monto-total">
-      <span class="total">Total: {{ montoTot | currency }}</span>
+      Total: {{ montoTot | currency }}
     </div>
     <button type="button" class="btn btn-warning btn-lg btn-block" (click)="enviarPedido(today, montoTot)">Enviar a cocina</button>        
   </table>
