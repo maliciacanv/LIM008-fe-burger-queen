@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+// import { DebugElement } from '@angular/core'
 import { SectionOneComponent } from './section-one.component';
 
 describe('SectionOneComponent', () => {
@@ -15,11 +15,10 @@ describe('SectionOneComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(SectionOneComponent);
-    component = fixture.componentInstance;
+    component = fixture.debugElement.componentInstance;
     fixture.detectChanges();
   });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  // it('should create', () => {
+  //   expect(component.title).toBe('Ingresa el nombre del cliente');
+  // });
 });

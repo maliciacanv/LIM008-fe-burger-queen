@@ -21,10 +21,6 @@ import { SectionBreackfastComponent } from './components/section-breackfast/sect
 import { SectionLunchComponent } from './components/section-lunch/section-lunch.component';
 import { TicketComponent } from './components/ticket/ticket.component';
 
-//module 
-import { SectionTwoModule } from './components/section-two/section-two.module';
-import { TicketModule } from './components/ticket/ticket.module';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,15 +31,12 @@ import { TicketModule } from './components/ticket/ticket.module';
     TicketComponent,
   ],
   imports: [
-    SectionTwoModule,
-    TicketModule,
     BrowserModule,
     APP_ROUTING,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     FormsModule
   ],
-
   providers: [
     ServiceFirestoreService,
     ServiceLocalService

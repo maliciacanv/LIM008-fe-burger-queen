@@ -1,8 +1,7 @@
 <div class="container-one"> 
     <img src="../assets/imagens/logo.png" class="logo-one"/>
-    <h1> {{ title }} </h1>
-    <i class="fa fa-user"></i>
-    <input class="input-one" type="text" placeholder="ingresa nombre" #nam (change)="inputName(nam.value)">
+    <h1> {{ title }}<i class="fa fa-user"></i></h1>
+    <input  class="input-one" type="text" placeholder="ingresa nombre" #nam (change)="inputName(nam.value)">
     <button class="btn btn-warning" type="button" [routerLink]="['/home']">Empezar pedido</button>
 </div>
 

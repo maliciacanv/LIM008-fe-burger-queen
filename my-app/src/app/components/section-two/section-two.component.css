@@ -10,6 +10,7 @@
 }
 
 .btn{
+    background: rgb(255, 245, 4);
     padding: 10px;
     font-size: 20px;
     margin: 25px;
@@ -23,6 +24,12 @@
 }
 
 .btns-two{
-    background: rgb(2, 2, 2);
     width: 100%;
+}
+.menu{
+    background: white;
+    color: white;
+    width: 50px;
+    height: 40px;
+    margin-top: 20px;
 }

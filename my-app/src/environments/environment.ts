@@ -3,6 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+
   production: false,
   firebase: {
     apiKey: "AIzaSyD7uuGN7Rk9EzztST5sdsux7JvnE8ATb5k",
@@ -13,6 +14,7 @@ export const environment = {
     messagingSenderId: "201466852151"
   }
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file

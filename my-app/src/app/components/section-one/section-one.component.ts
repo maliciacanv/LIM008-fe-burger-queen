@@ -25,4 +25,6 @@ export class SectionOneComponent implements OnInit {
        const newName = name;
        this.serviceLocal.getName(newName);
     }
+
+    
 }

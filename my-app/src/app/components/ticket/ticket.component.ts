@@ -38,6 +38,7 @@ export class TicketComponent implements OnInit {
   enviarPedido(date: any, montoTot: number){
     if(confirm('¿Haz verificado la orden del cliente?') === true ){
       this.serviceLocal.ordenesListo(date, montoTot)
+      alert('Tu pedido fue enviado con exito')
     }else{
       alert('Tu pedido no se ha enviado a cocina')
     }

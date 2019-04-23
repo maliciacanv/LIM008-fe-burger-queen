@@ -22,8 +22,8 @@ public createPedido;
    }
 
    addPedido(createPedido){
-     console.log(createPedido)
-     return this.addData.collection('ordenes').add(createPedido)
+     this.addData.collection('ordenes').add(createPedido)
+     location.reload();
    }
  
 }
