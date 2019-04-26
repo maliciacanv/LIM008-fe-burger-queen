@@ -4,8 +4,9 @@ import { SectionTwoComponent } from './components/section-two/section-two.compon
 import { SectionBreackfastComponent } from './components/section-breackfast/section-breackfast.component';
 import { SectionLunchComponent } from './components/section-lunch/section-lunch.component';
 
-const APP_ROUTES: Routes = [
-  { path: '', component: SectionOneComponent },
+export const APP_ROUTES: Routes = [
+  { path: '', redirectTo:'inicio', pathMatch: 'full'},
+  { path: 'inicio', component: SectionOneComponent },
   { path: 'home', component: SectionTwoComponent,
     children: [
      { path: '', component: SectionBreackfastComponent },

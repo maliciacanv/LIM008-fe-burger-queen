@@ -23,7 +23,7 @@ public createPedido;
 
    addPedido(createPedido){
      this.addData.collection('ordenes').add(createPedido)
-     location.reload();
+     
    }
  
 }

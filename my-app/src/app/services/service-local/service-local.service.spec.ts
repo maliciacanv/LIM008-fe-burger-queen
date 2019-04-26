@@ -1,11 +1,17 @@
 import { TestBed } from '@angular/core/testing';
 import { ServiceLocalService } from './service-local.service';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 describe('ServiceLocalService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
-
+  beforeEach(() => TestBed.configureTestingModule({
+    providers: [
+        ServiceLocalService,
+        {provide:  AngularFirestore }
+    ]
+  }));
+  
   it('should be created', () => {
-    const service: ServiceLocalService = TestBed.get(ServiceLocalService);
+    let service: ServiceLocalService = TestBed.get(ServiceLocalService);
     expect(service).toBeTruthy();
   });
 });

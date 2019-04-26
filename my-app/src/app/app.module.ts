@@ -20,6 +20,7 @@ import { SectionTwoComponent } from './components/section-two/section-two.compon
 import { SectionBreackfastComponent } from './components/section-breackfast/section-breackfast.component';
 import { SectionLunchComponent } from './components/section-lunch/section-lunch.component';
 import { TicketComponent } from './components/ticket/ticket.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { TicketComponent } from './components/ticket/ticket.component';
     APP_ROUTING,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    FormsModule
+    FormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     ServiceFirestoreService,
