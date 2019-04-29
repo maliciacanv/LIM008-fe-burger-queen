@@ -7,7 +7,7 @@ import { ServiceLocalService } from '../../services/service-local/service-local.
   templateUrl: './section-breackfast.component.html',
   styleUrls: ['./section-breackfast.component.css']
 })
-export class SectionBreackfastComponent implements OnInit { 
+export class SectionBreakfastComponent implements OnInit { 
   
   desayunos = []
   pedidosDesayuno = {}

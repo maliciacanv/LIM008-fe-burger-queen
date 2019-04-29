@@ -7,7 +7,7 @@ import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore'
 
 //rutas
-import { APP_ROUTING } from './app-routes';
+import { APP_ROUTING } from './app.routes';
 
 //servicios
 import { ServiceFirestoreService } from './services/service-firestore/service-firestore.service';
@@ -17,7 +17,7 @@ import { ServiceLocalService} from './services/service-local/service-local.servi
 import { AppComponent } from './app.component';
 import { SectionOneComponent } from './components/section-one/section-one.component';
 import { SectionTwoComponent } from './components/section-two/section-two.component';
-import { SectionBreackfastComponent } from './components/section-breackfast/section-breackfast.component';
+import { SectionBreakfastComponent } from './components/section-breakfast/section-breakfast.component';
 import { SectionLunchComponent } from './components/section-lunch/section-lunch.component';
 import { TicketComponent } from './components/ticket/ticket.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -27,7 +27,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     AppComponent,
     SectionOneComponent,
     SectionTwoComponent,
-    SectionBreackfastComponent,
+    SectionBreakfastComponent,
     SectionLunchComponent,
     TicketComponent,
   ],
@@ -43,6 +43,6 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     ServiceFirestoreService,
     ServiceLocalService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent]  
 })
 export class AppModule { }

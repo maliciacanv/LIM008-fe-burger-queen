@@ -1,20 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { SectionBreakfastComponent } from './section-breakfast.component';
 
-import { SectionLunchComponent } from './section-lunch.component';
-
-describe('SectionLunchComponent', () => {
-  let component: SectionLunchComponent;
-  let fixture: ComponentFixture<SectionLunchComponent>;
+describe('SectionBreackfastComponent', () => {
+  let component: SectionBreakfastComponent;
+  let fixture: ComponentFixture<SectionBreakfastComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SectionLunchComponent ]
+      declarations: [ SectionBreakfastComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SectionLunchComponent);
+    fixture = TestBed.createComponent(SectionBreakfastComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
