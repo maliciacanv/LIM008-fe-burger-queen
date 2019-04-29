@@ -9,7 +9,7 @@ export const routes: Routes = [
   { path: 'inicio', component: SectionOneComponent },
   { path: 'home', component: SectionTwoComponent,
     children: [
-     { path: '', redirectTo:'breakfast' },
+     { path: '', redirectTo:'breakfast',pathMatch: 'full' },
      { path: 'breakfast', component: SectionBreakfastComponent},
      { path: 'lunch', component: SectionLunchComponent },
     ]

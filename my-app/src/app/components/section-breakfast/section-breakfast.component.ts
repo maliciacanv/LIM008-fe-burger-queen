@@ -3,9 +3,9 @@ import { ServiceFirestoreService } from '../../services/service-firestore/servic
 import { ServiceLocalService } from '../../services/service-local/service-local.service';
 
 @Component({
-  selector: 'app-section-breackfast',
-  templateUrl: './section-breackfast.component.html',
-  styleUrls: ['./section-breackfast.component.css']
+  selector: 'app-section-breakfast',
+  templateUrl: './section-breakfast.component.html',
+  styleUrls: ['./section-breakfast.component.css']
 })
 export class SectionBreakfastComponent implements OnInit { 
   
