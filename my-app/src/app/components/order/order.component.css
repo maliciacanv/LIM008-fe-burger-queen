@@ -1,0 +1,11 @@
+.card{
+    padding: 10px;
+    background: white;
+    color: black;
+    width: 30%;
+    height: 30vh;
+    margin: 20px;
+}
+.name{
+    text-align: center;
+}

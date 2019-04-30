@@ -31,7 +31,6 @@
 .btn{
     padding: 5px;
     font-size: 20px;
-    color: black;
     margin-top: 5px;
 }
 
@@ -48,5 +47,16 @@ table{
 .fecha{
     font-size: 15px;
     float: right;
-    margin-top: 5px;
+    margin-top: 10px;
 }
+.input-one{
+    border: 2px outset rgb(14, 13, 13);
+    color: black;
+    font-size: 22px;
+    border-radius: 5px;
+    margin-top: 2%;
+    float: left;
+    padding: 5px;
+    text-align: center;
+}
+

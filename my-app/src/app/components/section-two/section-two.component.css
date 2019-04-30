@@ -10,7 +10,6 @@
 }
 
 .btn{
-    background: rgb(255, 245, 4);
     padding: 10px;
     font-size: 20px;
     margin: 25px;
@@ -32,4 +31,10 @@
     width: 50px;
     height: 40px;
     margin-top: 20px;
+}
+.button-pedidos{
+    border-radius: 5px;
+    color: black;
+    float: right;
+    background: white;
 }

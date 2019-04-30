@@ -9,7 +9,6 @@ import { routes } from './app.routes';
 
 // Componentes
 import { AppComponent } from './app.component';
-import { SectionOneComponent } from './components/section-one/section-one.component';
 import { SectionTwoComponent } from './components/section-two/section-two.component';
 import { TicketComponent } from './components/ticket/ticket.component';
 import { SectionBreakfastComponent } from './components/section-breakfast/section-breakfast.component';
@@ -33,7 +32,7 @@ describe('Router: App', () => {
         RouterTestingModule.withRoutes(routes),
         AngularFireModule.initializeApp(environment.firebase)
       ],
-      declarations: [AppComponent, SectionOneComponent, SectionTwoComponent, TicketComponent, SectionBreakfastComponent, SectionLunchComponent],
+      declarations: [AppComponent, SectionTwoComponent, TicketComponent, SectionBreakfastComponent, SectionLunchComponent],
       schemas: [
         CUSTOM_ELEMENTS_SCHEMA
       ],

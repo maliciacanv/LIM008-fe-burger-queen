@@ -15,21 +15,23 @@ import { ServiceLocalService} from './services/service-local/service-local.servi
 
 //componentes
 import { AppComponent } from './app.component';
-import { SectionOneComponent } from './components/section-one/section-one.component';
+import { StartComponent } from './components/start/start.component'
 import { SectionTwoComponent } from './components/section-two/section-two.component';
 import { SectionBreakfastComponent } from './components/section-breakfast/section-breakfast.component';
 import { SectionLunchComponent } from './components/section-lunch/section-lunch.component';
 import { TicketComponent } from './components/ticket/ticket.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { OrderComponent } from './components/order/order.component';
 
 @NgModule({
   declarations: [
-    AppComponent,  
-    SectionOneComponent,
+    AppComponent,
+    StartComponent,
     SectionTwoComponent,
     SectionBreakfastComponent,
     SectionLunchComponent,
     TicketComponent,
+    OrderComponent,
   ],
   imports: [
     BrowserModule,

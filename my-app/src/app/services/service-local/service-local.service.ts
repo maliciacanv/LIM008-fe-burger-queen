@@ -44,14 +44,6 @@ export class ServiceLocalService {
   }
   constructor( public serviceFirestore: ServiceFirestoreService) {}
 
-  getName(value: string){
-    this.order = {
-      ...this.order,
-      nombreDcliente: value
-    }
-    this.nameClient.next(value);
-  }
-
   getBreakfast(obj){
     this.arrayPedidos.push(obj)
      this.pedidosMenus.next(this.arrayPedidos);
@@ -90,9 +82,10 @@ export class ServiceLocalService {
   this.changeMontoTotal()
   }
 
-  ordenesListo(date: any, montoTot: number){
+  ordenesListo(date: any, montoTot: number, name: string){
     const orden = {
       ...this.order,
+      nombreDcliente: name,
       fecha: date,
       productos: this.arrayPedidos,
       montoTotalDelOrden: montoTot

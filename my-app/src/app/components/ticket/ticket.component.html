@@ -1,10 +1,7 @@
     <table class="table table-dark table-responsive table-hover">
-      <p class="cliente">Cliente: <span> {{ name }} </span></p>
+      <input  class="input-one" type="text" placeholder="ingresa nombre" #name >
       <div class="date">
-        <p class="fecha">Fecha: {{ today | date: 'short' }}</p>
-
-
-        
+        <p class="fecha">Fecha: {{ today | date: 'short' }}</p>      
       </div>
     <thead>
       <tr>
@@ -20,12 +17,12 @@
         <td><input  type="number" min="1" max="10" [ngModel]="pedido.cantidad" #cantidad (change)="onCantidad(pedido, cantidad.value)"></td>
         <td>{{ pedido.nombre }}</td>
         <td>{{ pedido.precio | currency }}</td>
-        <td>{{ pedido.precioTotal | currency }} </td>
+        <td>{{ pedido.precioTotal | currency }}</td>
         <td><button type="button" (click)="eliminar(pedido.nombre)" ><i class="fa fa-trash"></i></button></td>
       </tr>
   </tbody>
     <div class="monto-total">
       Total: {{ montoTot | currency }}
     </div>
-    <button type="button" class="btn btn-warning btn-lg btn-block" (click)="enviarPedido(today, montoTot)">Enviar a cocina</button>        
+    <button type="button" class="btn btn-primary btn-lg btn-block" (click)="enviarPedido(today, montoTot, name.value)">Enviar a cocina</button>        
   </table>

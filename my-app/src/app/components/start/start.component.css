@@ -1,0 +1,11 @@
+
+img{
+    width: 30%;
+}
+.logo{
+    display: block;
+    text-align: center;
+}
+h5, .btn{
+    font-size: 26px; 
+}

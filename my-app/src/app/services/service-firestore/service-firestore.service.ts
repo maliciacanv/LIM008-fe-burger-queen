@@ -11,6 +11,8 @@ export class ServiceFirestoreService {
 
 menusCollection: Observable<Menus[]>;
 
+pedidosMenus: Observable<>;
+
 public createPedido;
   
   constructor( public dataMenus: AngularFirestore,
@@ -23,16 +25,16 @@ public createPedido;
 
    addPedido(createPedido){
      this.addData.collection('ordenes').add(createPedido)
-     
    }
- 
+
+   getPedidos(){
+     return this.pedidosMenus = this.dataMenus.collection('ordenes').valueChanges();
+   }
+
 }
-
-
-
 export interface Menus{
-  tipo?: string;
-  nombre?: string;
-  precio?: number;
+  tipo?: string,
+  nombre?: string,
+  precio?: number,
 }
 
