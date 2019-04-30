@@ -31,7 +31,7 @@ import { OrderComponent } from './components/order/order.component';
     SectionBreakfastComponent,
     SectionLunchComponent,
     TicketComponent,
-    OrderComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,

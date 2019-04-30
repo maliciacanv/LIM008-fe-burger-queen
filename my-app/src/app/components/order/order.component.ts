@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ServiceFirestoreService } from '../../services/service-firestore/service-firestore.service'
 
 @Component({
@@ -6,7 +6,7 @@ import { ServiceFirestoreService } from '../../services/service-firestore/servic
   templateUrl: './order.component.html',
   styleUrls: ['./order.component.css']
 })
-export class OrderComponent implements OnInit {
+export class OrderComponent {
 
   ordenes: any;
 
@@ -14,12 +14,9 @@ export class OrderComponent implements OnInit {
 
   this.orderService.getPedidos().subscribe(order => {
   this.ordenes = order;
-  console.log(this.ordenes)
  
   })
   }
 
-  ngOnInit() {
-  }
-
+ 
 }

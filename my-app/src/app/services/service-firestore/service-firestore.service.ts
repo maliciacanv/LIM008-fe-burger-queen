@@ -11,7 +11,7 @@ export class ServiceFirestoreService {
 
 menusCollection: Observable<Menus[]>;
 
-pedidosMenus: Observable<>;
+pedidosMenus: Observable<{}>;
 
 public createPedido;
   
