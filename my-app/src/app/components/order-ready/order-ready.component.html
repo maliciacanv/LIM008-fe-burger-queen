@@ -1,0 +1,30 @@
+
+<div class="row">
+    <div class="card border-primary mb-3 m-2" *ngFor="let pedido of pedidoListo">
+      <h2 class="card-header text-center bg-transparent">{{ pedido.nombreDcliente }}</h2>
+      <div class="card-body text-primary">
+        <table class="table table-responsive">
+            <thead>
+              <tr>
+                <th scope="col">Cantidad</th>   
+                <th scope="col">Producto</th>
+                <th scope="col">P.Uni</th>
+                <th scope="col">P.total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let producto of pedido.productos">
+                <td>{{ producto.cantidad }}</td>
+                <td>{{ producto.nombre }}</td>
+                <td>{{ producto.precio | currency }}</td>
+                <td>{{ producto.precioTotal | currency }}</td>
+              </tr>
+          </tbody>
+          </table>
+      </div>
+      <div class="card-footer bg-transparent">
+        <h4 class="text-center">Total: {{ pedido.montoTotalDelOrden | currency }}</h4>
+      </div>
+    </div>
+  </div>
+  

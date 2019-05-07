@@ -25,14 +25,15 @@ export interface Producto {
 
 export class ServiceLocalService {
 
-  public nameClient = new BehaviorSubject('');
-  names = this.nameClient.asObservable();
+  public pedidoListo = new BehaviorSubject([]);
+  pedidos = this.pedidoListo.asObservable();
 
   public pedidosMenus= new BehaviorSubject([]);
   menus = this.pedidosMenus.asObservable();
 
   public montoTotalPedido = new BehaviorSubject(0);
   montoTotal = this.montoTotalPedido.asObservable();
+
 
   public arrayPedidos: Producto[] = [];
 
@@ -42,6 +43,9 @@ export class ServiceLocalService {
     productos: [],
     montoTotalDelOrden: 0
   }
+
+  public pedidoListoDcocincero:  any[] = [];
+
   constructor( public serviceFirestore: ServiceFirestoreService) {}
 
   getBreakfast(obj){
@@ -91,6 +95,11 @@ export class ServiceLocalService {
       montoTotalDelOrden: montoTot
     }
     this.serviceFirestore.addPedido(orden)
+  }
+
+  pedidoListoDeCocinero(pedido: any){
+      this.pedidoListoDcocincero.push(pedido)
+    this.pedidoListo.next(this.pedidoListoDcocincero)
   }
   
 

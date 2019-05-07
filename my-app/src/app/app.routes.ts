@@ -4,6 +4,7 @@ import { SectionTwoComponent } from './components/section-two/section-two.compon
 import { SectionBreakfastComponent } from './components/section-breakfast/section-breakfast.component';
 import { SectionLunchComponent } from './components/section-lunch/section-lunch.component';
 import { OrderComponent } from './components/order/order.component'
+import { OrderReadyComponent } from './components/order-ready/order-ready.component';
 
 export const routes: Routes = [
   { path: '', redirectTo:'start', pathMatch: 'full'},
@@ -15,7 +16,8 @@ export const routes: Routes = [
      { path: 'breakfast', component: SectionBreakfastComponent},
      { path: 'lunch', component: SectionLunchComponent },
     ]
-  }
+  },
+  { path: 'orderReady', component: OrderReadyComponent }
 ]
 
 export const APP_ROUTING = RouterModule.forRoot(routes);

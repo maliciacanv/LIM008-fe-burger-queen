@@ -15,9 +15,9 @@ export class TicketComponent implements OnInit {
 
   constructor( private serviceLocal: ServiceLocalService,)
   {
-    this.serviceLocal.names.subscribe(nam => {
-      return this.name = nam;
-    });
+    // this.serviceLocal.names.subscribe(nam => {
+    //   return this.name = nam;
+    // });
     this.serviceLocal.menus.subscribe((breakfast: any) => {
       console.log(breakfast)
       return this.pedidoMenus = breakfast;

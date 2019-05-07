@@ -22,6 +22,7 @@ import { SectionLunchComponent } from './components/section-lunch/section-lunch.
 import { TicketComponent } from './components/ticket/ticket.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { OrderComponent } from './components/order/order.component';
+import { OrderReadyComponent } from './components/order-ready/order-ready.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { OrderComponent } from './components/order/order.component';
     SectionBreakfastComponent,
     SectionLunchComponent,
     TicketComponent,
-    OrderComponent
+    OrderComponent,
+    OrderReadyComponent
   ],
   imports: [
     BrowserModule,

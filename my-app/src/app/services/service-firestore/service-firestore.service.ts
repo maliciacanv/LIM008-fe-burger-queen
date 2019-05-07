@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore} from '@angular/fire/firestore'
-import { Observable } from 'Rxjs';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,7 @@ export class ServiceFirestoreService {
 
 menusCollection: Observable<Menus[]>;
 
-pedidosMenus: Observable<{}>;
+pedidosMenus: {};
 
 public createPedido;
   
@@ -24,11 +24,11 @@ public createPedido;
    }
 
    addPedido(createPedido){
-     this.addData.collection('ordenes').add(createPedido)
+     this.addData.collection('ordenes').add(createPedido);
    }
 
    getPedidos(){
-     return this.pedidosMenus = this.dataMenus.collection('ordenes').valueChanges();
+    return this.dataMenus.collection('ordenes').valueChanges()
    }
 
 }
